@@ -1,1 +1,250 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Uchqunbek Moxirjonov | Kompyuterlar olami</title>
+<meta name="description" content="Noutbuklar, kompyuterlar, coolerlar va kompyuter tizimlari haqida zamonaviy sayt.">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,sans-serif;background:#07111e;color:#f2f7ff}
+a{color:inherit;text-decoration:none}
+button{cursor:pointer}
+header{background:#050c16;border-bottom:1px solid #164365;padding:16px 4%;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.logo{font-size:23px;font-weight:bold;color:#fff}
+.logo span,.blue{color:#0b9dff}
+.logo small{display:block;font-size:11px;font-weight:normal;color:#b8cce0;margin-top:5px}
+nav{display:flex;gap:20px;flex-wrap:wrap;font-size:13px}
+nav a:hover{color:#08a6ff}
+.instagram{color:#ff55cf;font-weight:bold}
+.hero{padding:55px 4%;min-height:350px;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:25px;background:linear-gradient(90deg,#06101d 20%,#07111d99),url('https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=1400&q=85') center/cover}
+.eyebrow{color:#00aaff;letter-spacing:3px;font-size:12px;margin-bottom:15px}
+h1{font-size:clamp(32px,5vw,53px);line-height:1.1;margin-bottom:18px}
+.hero p{line-height:1.8;color:#d3dfed;max-width:500px}
+.btn{display:inline-block;padding:13px 20px;border-radius:7px;background:#078cff;color:white;border:0;font-weight:bold;margin:20px 8px 0 0}
+.btn:hover{background:#0069c9}
+.features{display:grid;grid-template-columns:repeat(2,1fr);gap:15px}
+.feature{background:#06101bdc;border:1px solid #174569;border-radius:12px;padding:18px}
+.feature b{display:block;margin-bottom:8px;color:#45b9ff}
+.feature p{font-size:13px}
+.categories{padding:20px 4%;display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.category{background:#0b1a2a;border:1px solid #234665;border-radius:9px;padding:12px;text-align:center;transition:.2s}
+.category:hover{border-color:#0b9dff;transform:translateY(-3px)}
+.category img{width:100%;height:85px;object-fit:contain;border-radius:5px}
+.category h3{font-size:14px;margin:8px 0}
+.category p{font-size:11px;color:#afc6dd}
+section{padding:25px 4%}
+.section-title{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:20px;flex-wrap:wrap}
+.section-title h2{font-size:23px}
+.section-title span{color:#08a6ff}
+.products{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:13px}
+.product{background:#0a1929;border:1px solid #24415b;border-radius:10px;overflow:hidden}
+.product img{width:100%;height:145px;object-fit:cover;background:white}
+.product-info{padding:12px}
+.product h3{font-size:14px;margin-bottom:8px}
+.product p{font-size:12px;color:#b4c8da;line-height:1.6}
+.price{display:block;color:#5cc4ff;font-weight:bold;margin:10px 0;font-size:13px}
+.details{display:block;width:100%;border:0;background:#078cff;color:white;padding:10px;border-radius:5px}
+.details:hover{background:#0067be}
+.banner{margin:15px 4%;padding:35px;background:linear-gradient(90deg,#06101a,#10294b),url('https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=1200&q=80') center/cover;border:1px solid #245176;border-radius:12px}
+.banner h2{font-size:28px;margin-bottom:12px}
+.banner p{line-height:1.8;max-width:600px;color:#d6e4f4}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.panel{padding:20px;background:#0a1928;border:1px solid #234665;border-radius:10px}
+.panel h2{font-size:19px;margin-bottom:16px;color:#59c2ff}
+.panel h3{font-size:14px;margin:12px 0 5px}
+.panel p,.panel li{font-size:13px;line-height:1.8;color:#c2d1e1}
+.panel ul{padding-left:18px}
+.cooler-img{width:100%;height:150px;object-fit:cover;border-radius:7px;margin-bottom:10px}
+.system{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.system div{padding:10px;background:#102338;border-radius:7px}
+.contact{background:#0a1928;text-align:center;padding:35px 15px;border-top:1px solid #204260}
+.contact p{margin:12px 0;color:#c1d4e8}
+footer{padding:20px 4%;background:#040a12;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:12px;color:#bdcddd}
+#search{padding:11px;width:100%;max-width:400px;border:1px solid #285577;border-radius:7px;background:#0a1928;color:white;margin-bottom:20px}
+@media(max-width:1000px){.products{grid-template-columns:repeat(3,1fr)}.categories{grid-template-columns:repeat(3,1fr)}.info-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:650px){header{justify-content:center}.hero{grid-template-columns:1fr;padding-top:35px}.features{grid-template-columns:1fr 1fr}.categories{grid-template-columns:repeat(2,1fr)}.products{grid-template-columns:repeat(2,minmax(0,1fr))}.product img{height:120px}.info-grid{grid-template-columns:1fr}nav{justify-content:center}.section-title h2{font-size:19px}}
+</style>
+</head>
+<body>
 
+<header>
+ <a href="#" class="logo">💻 Uchqunbek <span>Moxirjonov</span>
+  <small>Kompyuter va noutbuklar olami</small>
+ </a>
+ <nav>
+  <a href="#home">Bosh sahifa</a>
+  <a href="#laptops">Noutbuklar</a>
+  <a href="#computers">Kompyuterlar</a>
+  <a href="#coolers">Coolerlar</a>
+  <a href="#systems">Tizimlar</a>
+  <a href="#about">Ma'lumotlar</a>
+ </nav>
+ <a class="instagram" href="https://www.instagram.com/moxirjanovv_vip63/" target="_blank">◎ Instagram</a>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div>
+  <div class="eyebrow">SIZNING TEXNOLOGIYA DUNYONGIZ</div>
+  <h1>Kompyuter va noutbuklar <span class="blue">bir joyda!</span></h1>
+  <p>Eng zamonaviy noutbuklar, kuchli kompyuterlar, ishonchli coolerlar va tizimlar haqida barcha ma'lumotlar shu saytda!</p>
+  <a class="btn" href="#laptops">Mahsulotlarni ko'rish</a>
+  <a class="btn" href="#contact" style="background:transparent;border:1px solid #6385a5">Biz bilan bog'lanish</a>
+ </div>
+ <div class="features">
+  <div class="feature"><b>⚡ Yuqori sifat</b><p>Zamonaviy texnologiyalar haqida ma'lumot.</p></div>
+  <div class="feature"><b>🛡 Ishonchli brendlar</b><p>ASUS, Acer, MSI, HP, Lenovo va boshqalar.</p></div>
+  <div class="feature"><b>🖥 Turli modellar</b><p>O'yin, o'qish va ish uchun kompyuterlar.</p></div>
+  <div class="feature"><b>🎧 Foydali maslahatlar</b><p>Kompyuter tanlash va undan foydalanish.</p></div>
+ </div>
+</section>
+
+<div class="categories">
+ <a class="category" href="#laptops">
+  <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=350&q=80" alt="Noutbuk">
+  <h3>Noutbuklar</h3><p>Turli brend va modellar</p>
+ </a>
+ <a class="category" href="#computers">
+  <img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=350&q=80" alt="Kompyuter">
+  <h3>Kompyuterlar</h3><p>O'yin va ish uchun</p>
+ </a>
+ <a class="category" href="#coolers">
+  <img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=350&q=80" alt="Kompyuter qismlari">
+  <h3>Coolerlar</h3><p>Sovutish tizimlari</p>
+ </a>
+ <a class="category" href="#systems">
+  <img src="https://images.unsplash.com/photo-1555617981-dac3880eac6e?auto=format&fit=crop&w=350&q=80" alt="Kompyuter ichki qismlari">
+  <h3>Ichki tizimlar</h3><p>Protsessor, RAM, SSD</p>
+ </a>
+ <a class="category" href="#about">
+  <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=350&q=80" alt="Elektronika">
+  <h3>Texnologiyalar</h3><p>Dasturlar va qurilmalar</p>
+ </a>
+</div>
+
+<section id="laptops">
+ <div class="section-title"><h2>💻 Noutbuklar</h2><span>Turli brendlar</span></div>
+ <input id="search" type="search" placeholder="🔎 Noutbuk yoki kompyuter qidirish..." oninput="filterProducts()">
+ <div class="products" id="laptop-list">
+  <article class="product" data-name="asus vivobook noutbuk">
+   <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=500&q=85" alt="ASUS noutbuk">
+   <div class="product-info"><h3>ASUS VivoBook 15</h3><p>Intel Core i5 | 8GB RAM | 512GB SSD</p><span class="price">5 999 000 so'm</span><button class="details" onclick="showDetails('ASUS VivoBook 15','O‘qish, ofis ishlari va kundalik foydalanish uchun noutbuk. Aniq xususiyatlar modelga qarab farq qiladi.')">Batafsil</button></div>
+  </article>
+  <article class="product" data-name="lenovo ideapad noutbuk">
+   <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=500&q=85" alt="Lenovo noutbuk">
+   <div class="product-info"><h3>Lenovo IdeaPad 3</h3><p>AMD Ryzen 5 | 8GB | 512GB SSD</p><span class="price">5 499 000 so'm</span><button class="details" onclick="showDetails('Lenovo IdeaPad 3','O‘qish, internet va kundalik vazifalar uchun noutbuk. Konfiguratsiya modeliga bog‘liq.')">Batafsil</button></div>
+  </article>
+  <article class="product" data-name="hp pavilion noutbuk">
+   <img src="https://images.unsplash.com/photo-1593642632823-8f785ba67e45?auto=format&fit=crop&w=500&q=85" alt="HP noutbuk">
+   <div class="product-info"><h3>HP Pavilion</h3><p>Intel Core i7 | 16GB | 1TB SSD</p><span class="price">8 999 000 so'm</span><button class="details" onclick="showDetails('HP Pavilion','Ish, o‘qish va ko‘p vazifali ishlashga mo‘ljallangan turkum. Xususiyatlar modelga bog‘liq.')">Batafsil</button></div>
+  </article>
+  <article class="product" data-name="msi gaming noutbuk">
+   <img src="https://images.unsplash.com/photo-1603302576837-37561b2e2302?auto=format&fit=crop&w=500&q=85" alt="MSI gaming noutbuk">
+   <div class="product-info"><h3>MSI Gaming</h3><p>Core i5 | 8GB RAM | 512GB SSD</p><span class="price">7 499 000 so'm</span><button class="details" onclick="showDetails('MSI Gaming','O‘yinlar va grafik vazifalar uchun mo‘ljallangan noutbuklar turkumi. Videokartani alohida tekshiring.')">Batafsil</button></div>
+  </article>
+  <article class="product" data-name="acer aspire noutbuk">
+   <img src="https://images.unsplash.com/photo-1525547719571-a2d4ac8945e2?auto=format&fit=crop&w=500&q=85" alt="Acer noutbuk">
+   <div class="product-info"><h3>Acer Aspire 7</h3><p>Core i5 | 16GB RAM | 512GB SSD</p><span class="price">6 999 000 so'm</span><button class="details" onclick="showDetails('Acer Aspire 7','Ish va ko‘ngilochar foydalanish uchun noutbuklar oilasi. Narx va xususiyatlar sotuvchiga qarab o‘zgaradi.')">Batafsil</button></div>
+  </article>
+ </div>
+</section>
+
+<section id="computers">
+ <div class="section-title"><h2>🖥 Kompyuterlar</h2><span>Stol va gaming kompyuterlar</span></div>
+ <div class="products">
+  <article class="product"><img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=500&q=85" alt="Gaming kompyuter"><div class="product-info"><h3>Gaming PC RGB</h3><p>O'yinlar uchun yig'iladigan kompyuter.</p><span class="price">Narx konfiguratsiyaga bog'liq</span><button class="details" onclick="showDetails('Gaming PC RGB','Protsessor, videokarta, RAM va SSD tanloviga qarab turli o‘yinlar uchun yig‘iladi.')">Batafsil</button></div></article>
+  <article class="product"><img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f5?auto=format&fit=crop&w=500&q=85" alt="Stol kompyuteri"><div class="product-info"><h3>Ofis kompyuteri</h3><p>O'qish, hujjatlar va internet uchun.</p><span class="price">Narx konfiguratsiyaga bog'liq</span><button class="details" onclick="showDetails('Ofis kompyuteri','Hujjatlar, darslar va kundalik vazifalar uchun mos konfiguratsiya tanlanadi.')">Batafsil</button></div></article>
+  <article class="product"><img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=500&q=85" alt="Kompyuter qismlari"><div class="product-info"><h3>Kompyuter yig'ish</h3><p>Qismlarni o'zingiz tanlang.</p><span class="price">Byudjetga qarab</span><button class="details" onclick="showDetails('Kompyuter yig‘ish','Ona plata, protsessor, videokarta, RAM, SSD, quvvat bloki va korpus mos kelishi kerak.')">Batafsil</button></div></article>
+ </div>
+</section>
+
+<section id="coolers">
+ <div class="section-title"><h2>❄️ Coolerlar va sovutish tizimlari</h2></div>
+ <div class="products">
+  <article class="product"><img src="https://images.unsplash.com/photo-1587202372634-32705e3bf49c?auto=format&fit=crop&w=500&q=85" alt="Kompyuter ventilyatori"><div class="product-info"><h3>CPU Cooler</h3><p>Protsessor haroratini boshqarishga yordam beradi.</p><button class="details" onclick="showDetails('CPU Cooler','Protsessor soketi, quvvat sarfi va korpus balandligiga mos sovutkich tanlang.')">Batafsil</button></div></article>
+  <article class="product"><img src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=500&q=85" alt="Sovutish ventilyatori"><div class="product-info"><h3>Case Fan RGB</h3><p>Korpus ichidagi havo aylanishi uchun.</p><button class="details" onclick="showDetails('Case Fan RGB','Ventilyator o‘lchami, ulagichi va korpusdagi havo oqimiga e’tibor bering.')">Batafsil</button></div></article>
+  <article class="product"><img src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=500&q=85" alt="Suvli sovutish"><div class="product-info"><h3>Suvli sovutish</h3><p>Radiator va ventilyatorli tizimlar.</p><button class="details" onclick="showDetails('Suvli sovutish tizimi','Radiator o‘lchami, korpus mosligi va protsessor soketini tekshirish kerak.')">Batafsil</button></div></article>
+ </div>
+</section>
+
+<div class="banner" id="about">
+ <h2><span class="blue">TEXNOLOGIYA</span> SIZ BILAN!</h2>
+ <p>Kompyuterlar, noutbuklar, coolerlar, ichki qismlar va dasturiy tizimlar haqida foydali ma'lumotlar. Yangi texnologiyalarni birgalikda o'rganamiz!</p>
+ <a class="btn" href="https://www.instagram.com/moxirjanovv_vip63/" target="_blank">Instagram sahifam</a>
+</div>
+
+<section id="systems">
+ <div class="info-grid">
+  <div class="panel">
+   <h2>⚙ Kompyuter ichidagi tizimlar</h2>
+   <div class="system">
+    <div><h3>🧠 Protsessor (CPU)</h3><p>Kompyuter hisob-kitoblarini bajaradi.</p></div>
+    <div><h3>🎮 Videokarta (GPU)</h3><p>Grafika va tasvirlarni qayta ishlaydi.</p></div>
+    <div><h3>💾 RAM</h3><p>Ishlayotgan dasturlar ma'lumotini vaqtincha saqlaydi.</p></div>
+    <div><h3>📀 SSD</h3><p>Fayl va dasturlarni uzoq muddat saqlaydi.</p></div>
+    <div><h3>🔌 Ona plata</h3><p>Komponentlarni o'zaro bog'laydi.</p></div>
+    <div><h3>⚡ Quvvat bloki</h3><p>Qismlarga elektr energiyasi yetkazadi.</p></div>
+   </div>
+  </div>
+  <div class="panel">
+   <h2>❄ Sovutish tizimlari</h2>
+   <img class="cooler-img" src="https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=600&q=85" alt="Sovutish tizimi">
+   <ul>
+    <li>CPU havo sovutkichlari</li>
+    <li>Suyuq sovutish tizimlari</li>
+    <li>Korpus ventilyatorlari</li>
+    <li>Radiatorlar va termopasta</li>
+    <li>To'g'ri havo aylanishi</li>
+   </ul>
+  </div>
+  <div class="panel">
+   <h2>💿 Dasturiy tizimlar</h2>
+   <h3>🪟 Windows</h3><p>Windows 10 va Windows 11 — kompyuter operatsion tizimlari.</p>
+   <h3>🐧 Linux</h3><p>Ubuntu kabi turli distributivlarga ega ochiq kodli tizimlar oilasi.</p>
+   <h3>🍎 macOS</h3><p>Apple Mac kompyuterlari uchun operatsion tizim.</p>
+   <h3>🧰 Dasturlar</h3><p>Office, dasturlash muhiti, grafik va video tahrirlash dasturlari.</p>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="panel">
+  <h2>📚 Kompyuter tanlash bo'yicha maslahatlar</h2>
+  <ul>
+   <li>O'qish va ofis ishlari uchun kundalik vazifalarga mos protsessor va RAM tanlang.</li>
+   <li>O'yinlar uchun videokarta, protsessor va sovutish tizimini birgalikda hisobga oling.</li>
+   <li>SSD kompyuter va dasturlarning tezroq ishga tushishiga yordam beradi.</li>
+   <li>Noutbuk olayotganda ekran, batareya, kafolat va haqiqiy texnik xususiyatlarni tekshiring.</li>
+  </ul>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <h2>Biz bilan bog'laning</h2>
+ <p>Sayt muallifi: <strong>Uchqunbek Moxirjonov</strong></p>
+ <p>Instagram: <a class="instagram" href="https://www.instagram.com/moxirjanovv_vip63/" target="_blank">@moxirjanovv_vip63</a></p>
+ <a class="btn" href="https://www.instagram.com/moxirjanovv_vip63/" target="_blank">Instagramga o'tish</a>
+</section>
+</main>
+
+<footer>
+ <span>© 2026 Uchqunbek Moxirjonov. Barcha huquqlar himoyalangan.</span>
+ <a class="instagram" href="https://www.instagram.com/moxirjanovv_vip63/" target="_blank">◎ moxirjanovv_vip63</a>
+ <span>Texnologiya — kelajak kaliti!</span>
+</footer>
+
+<script>
+function filterProducts(){
+ const q=document.getElementById('search').value.toLowerCase().trim();
+ document.querySelectorAll('#laptop-list .product').forEach(function(card){
+  card.style.display=card.dataset.name.includes(q)||card.innerText.toLowerCase().includes(q)?'':'none';
+ });
+}
+function showDetails(name,description){
+ alert(name+'\\n\\n'+description);
+}
+</script>
+</body>
+  </html>
